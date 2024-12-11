@@ -1,5 +1,5 @@
-# FunctionFalcon
-FunctionFalcon is a Python program that allows users to enter mathematical expressions and get the solutions using an API. The program also features a history list where past calculations can be viewed and copied to the clipboard.
+# Wolfy
+Wolfy is a Python program that allows users to enter mathematical expressions and get the solutions using an API. The program also features a history list where past calculations can be viewed and copied to the clipboard.
 
 ## Installation
 
@@ -27,7 +27,7 @@ Math Solver supports the following mathematical operations:
 
 ## API
 
-FunctionFalcon uses the [Wolfram Alpha API](https://www.wolframalpha.com/) to solve mathematical expressions. To use the program, you will need to sign up for a Wolfram Alpha API key and enter it in the `config.py` file.
+Wolfy uses the [Wolfram Alpha API](https://www.wolframalpha.com/) to solve mathematical expressions. To use the program, you will need to sign up for a Wolfram Alpha API key and enter it in the `config.py` file.
 
 ## License
 
