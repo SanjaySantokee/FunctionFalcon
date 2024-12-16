@@ -4,11 +4,17 @@ from tkinter import ttk
 import tkinter.messagebox
 import pyperclip
 from PIL import Image, ImageTk
-
+import os
 import configparser
 
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+ADDITION_ICON = os.path.join(BASE_DIR, 'data', 'addition.png')
+COPY_ICON = os.path.join(BASE_DIR, 'data', 'copy.png')
+CONFIG_FILE = os.path.join(BASE_DIR, 'data', 'config.ini')
+
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read(CONFIG_FILE)
 
 api_key = config.get('API', 'API_KEY')
 client = wolframalpha.Client(api_key)
@@ -35,9 +41,9 @@ def copy_from_history(event):
 
 if __name__ == '__main__':
     window = tk.Tk()
-    window.title('Math Solver')
+    window.title('Wolfy')
 
-    addition_icon = tk.PhotoImage(file='addition.png')
+    addition_icon = tk.PhotoImage(file=ADDITION_ICON)
     window.iconphoto(True, addition_icon)
 
     input_label = ttk.Label(window, text='Enter a math question or expression:')
@@ -54,7 +60,7 @@ if __name__ == '__main__':
     output_label = ttk.Label(output_frame, text='Answer:')
     output_label.pack(side='left')
 
-    copy_image = Image.open('copy.png').resize((16, 16))
+    copy_image = Image.open(COPY_ICON).resize((16, 16))
     copy_icon = ImageTk.PhotoImage(copy_image)
     copy_button = ttk.Button(output_frame, image=copy_icon, command=copy_answer)
     copy_button.pack(side='left')
